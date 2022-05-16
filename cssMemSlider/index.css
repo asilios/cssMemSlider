@@ -1,0 +1,209 @@
+#slider {
+   margin: 0 auto;
+   width: 800px;
+   max-width: 100%;
+   text-align: center;
+}
+#slider input[type=radio] {
+   display: none;
+ }
+#slider label {
+   cursor:pointer;
+   text-decoration: none;
+ }
+#slides {
+   padding: 0px;
+    
+   background: #fff;
+   position: relative;
+   z-index: 1;
+}
+#overflow {
+   width: 100%;
+   overflow: hidden;
+}
+#overflow-names {
+   width: 400px;
+   overflow: hidden;
+}
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slide1:checked ~ .names-box .names {
+   margin-left: 0;
+}
+#slide2:checked ~ .names-box .names {
+   margin-left: -100%;
+}
+#slide3:checked ~ .names-box .names {
+   margin-left: -200%;
+}
+#slide4:checked ~ .names-box .names {
+   margin-left: -300%;
+}
+.names-box .names {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 40px;
+}
+
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 0;
+   height: 555px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #fff;
+}
+.names-box .name {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: left;
+   background-color: #00171F;
+   font-size: larger;
+   align-items: center;
+   height: 100%;
+   color: rgb(165, 29, 29);
+}
+#slides .slide_1 {
+   background: #00171F;
+}
+#slides .slide_2 {
+   background: #003459;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}
+#controls {
+   margin: -180px 0 0 0;
+   width: 100%;
+   height: 50px;
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   opacity: .4;
+}
+#controls label:hover {
+   opacity: 1;
+}
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+   float:right;
+   margin: 0 -50px 0 0;
+   display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+   float:left;
+   margin: 0 0 0 -50px;
+   display: block;
+}
+#bullets {
+   margin: 150px 0 0;
+   text-align: right;
+   width: 400px;
+   float: right;
+}
+#bullets label {
+   display: inline-block;
+   width: 15px;
+   height: 15px;
+   border-radius: 100%;
+   background: blue;
+   margin: 0 10px;
+}
+#bullets label:hover {
+   background: #007EA7;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: rgb(224, 10, 10);
+}
+#slide1:checked ~ #bullets label:nth-child(1):hover {
+   background: rgb(133, 84, 84);
+}
+#slide2:checked ~ #bullets label:nth-child(2):hover {
+   background: rgb(133, 84, 84);
+}
+#slide3:checked ~ #bullets label:nth-child(3):hover {
+   background: rgb(133, 84, 84);
+}
+#slide4:checked ~ #bullets label:nth-child(4):hover {
+   background: rgb(133, 84, 84);
+}
+
+
+
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: 100%;
+      margin: 0 auto;
+   }
+   #bullets {
+      margin-top: 150px;
+      
+      text-align: center;
+      width: 100%;
+      
+   }
+   #overflow-names {
+      width: 100%;
+   }
+   .name-content {
+      margin: auto;
+   }
+   .names-box .names {
+      margin-top: 0px;
+
+   }
+}
+.names {
+   margin: 130px 0 0;
+   text-align: left;
+   width: 400px;
+   float: left;
+}
